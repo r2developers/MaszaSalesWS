@@ -4,34 +4,33 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name = "role")
 public class Role {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+	private Long role_id;
 
-	@ManyToMany(mappedBy = "roles")
-	private String name;
+	@NotNull
+	private String role;
 
-	public Long getId() {
-		return id;
+	public Long getRole_id() {
+		return role_id;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setRole_id(Long role_id) {
+		this.role_id = role_id;
 	}
 
-	public String getName() {
-		return name;
+	public String getRole() {
+		return role;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setRole(String role) {
+		this.role = role;
 	}
-
+	
+	
 }
