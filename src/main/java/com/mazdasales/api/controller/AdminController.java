@@ -24,17 +24,17 @@ public class AdminController {
 
 	// Add User
 
-	/*
-	 * @PreAuthorize("hasAnyRole('ADMIN')")
-	 * 
-	 * @PostMapping("/admin/add") public String createUser(@RequestBody User user) {
-	 * 
-	 * String password = user.getPassword(); String encryptPassword =
-	 * passwordEncoder.encode(password); user.setPassword(encryptPassword);
-	 * userService.addUser(user);
-	 * 
-	 * return "User created successfully!"; }
-	 */
+	
+	  @PreAuthorize("hasAnyRole('ADMIN')")
+	  
+	  @PostMapping("/admin/add") public String createUser(@RequestBody User user) {
+	  
+	  String password = user.getPassword(); String encryptPassword =
+	  passwordEncoder.encode(password); user.setPassword(encryptPassword);
+	  userService.addUser(user);
+	  
+	  return "User created successfully!"; }
+	 
 
 	@PreAuthorize("hasAnyRole('ADMIN')")
 	@GetMapping("/admin/process")
